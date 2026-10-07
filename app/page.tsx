@@ -1,410 +1,515 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [lightMode, setLightMode] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <main>
-      
-{/* Navigation */}
-<nav>
-  <h2>KAYE.DEV</h2>
+    <main className={`site ${lightMode ? "light-mode" : "dark-mode"}`}>
+      {/* =========================
+          NAVIGATION
+      ========================= */}
+      <header className="navbar">
+        <a href="#home" className="logo" onClick={closeMenu}>
+          KAYE<span>.DEV</span>
+        </a>
 
-  <div>
-    <a href="#home">Home</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#certification">Certification</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+        <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
+          <a href="#home" onClick={closeMenu}>
+            <small>00</small>
+            HOME
+          </a>
 
-{/* Home / About Me */}
-<section id="home">
-  <div className="home-content">
+          <a href="#education" onClick={closeMenu}>
+            <small>01</small>
+            EDUCATION
+          </a>
 
-    <p className="home-greeting">
-      Hello, I'm Kaye M. Catabona
-    </p>
+          <a href="#skills" onClick={closeMenu}>
+            <small>02</small>
+            SKILLS
+          </a>
 
-    <p className="home-role">
-      BSIT STUDENT / PROGRAMMER
-    </p>
+          <a href="#certification" onClick={closeMenu}>
+            <small>03</small>
+            CERTIFICATION
+          </a>
 
-    <h1>
-      Kaye M.
-      <br />
-      <span>Catabona</span>
-    </h1>
+          <a href="#projects" onClick={closeMenu}>
+            <small>04</small>
+            PROJECTS
+          </a>
 
-    <p className="home-description">
-      An Information Technology student learning to
-      build useful and creative software solutions.
-      I am currently developing my skills in programming,
-      web development, and software development.
-    </p>
+          <a href="#contact" onClick={closeMenu}>
+            <small>05</small>
+            CONTACT
+          </a>
 
-    <div className="home-buttons">
-      <a href="#projects" className="button-primary">
-        View Projects
-      </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-nav"
+            onClick={closeMenu}
+          >
+            RESUME ↗
+          </a>
+        </nav>
 
-      <a
-        href="mailto:your-email@example.com"
-        className="button-secondary"
-      >
-        Contact Me
-      </a>
-    </div>
+        <div className="nav-actions">
+          <button
+            className="theme-button"
+            onClick={() => setLightMode(!lightMode)}
+            aria-label="Toggle theme"
+          >
+            {lightMode ? "☾" : "☀"}
+          </button>
 
-    <div className="home-tech">
-      <span>Java</span>
-      <span>JavaScript</span>
-      <span>React</span>
-      <span>Next.js</span>
-    </div>
+          <button
+            className={`menu-button ${menuOpen ? "active" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation"
+            aria-expanded={menuOpen}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </header>
 
-  </div>
-</section>
-{/* Education */}
-<section id="education">
+      {/* =========================
+          BACKGROUND
+      ========================= */}
+      <div className="page-grid" />
+      <div className="page-orb" />
 
-  <div className="section-label">
-    01 / EDUCATION
-  </div>
+      {/* =========================
+          HERO
+      ========================= */}
+      <section id="home" className="hero">
+        <div className="hero-inner">
+          <div className="hero-meta">
+            <span>01 — STUDENT DEVELOPER</span>
+            <span>PHILIPPINES</span>
+          </div>
 
-  <h2 className="section-title">
-    My Education
-  </h2>
+          <div className="hero-main">
+            <p className="eyebrow">
+              HELLO, I&apos;M KAYE M. CATABONA
+            </p>
 
-  <div className="education-card">
+            <h1>
+              Kaye M.
+              <span>Catabona</span>
+            </h1>
 
-    <div className="education-main">
-      <p className="education-year">
-        2024 — PRESENT
-      </p>
+            <div className="hero-bottom">
+              <div>
+                <p className="role">
+                  BSIT STUDENT / PROGRAMMER
+                </p>
 
-      <h3>
-        Nueva Vizcaya State University
-      </h3>
+                <p className="hero-description">
+                  I&apos;m an Information Technology student
+                  learning to design and build useful digital
+                  experiences through programming, web
+                  development, and software projects.
+                </p>
 
-      <p className="education-degree">
-        Bachelor of Science in Information Technology
-      </p>
-    </div>
+                <div className="hero-actions">
+                  <a href="#projects" className="primary-button">
+                    VIEW PROJECTS
+                    <span>↗</span>
+                  </a>
 
-    <div className="education-details">
-      <p>
-        Currently developing knowledge and practical
-        skills in programming, web development,
-        software engineering, databases, and
-        systems integration.
-      </p>
-    </div>
+                  <a href="#contact" className="secondary-button">
+                    CONTACT ME
+                  </a>
+                </div>
+              </div>
 
-  </div>
+              <div className="hero-stack">
+                <span>JAVA</span>
+                <span>JAVASCRIPT</span>
+                <span>REACT</span>
+                <span>NEXT.JS</span>
+              </div>
+            </div>
+          </div>
 
-</section>
+          <div className="hero-footer">
+            <span>SCROLL TO EXPLORE</span>
+            <div className="scroll-arrow">↓</div>
+          </div>
+        </div>
+      </section>
 
-{/* Programming Skills */}
-<section id="skills">
-
-  <div className="section-label">
-    02 / SKILLS
-  </div>
-
-  <h2 className="section-title">
-    What I Work With
-  </h2>
-
-  <div className="skills-grid">
-
-    <div className="skill-card">
-      <div className="skill-top">
-        <span>01</span>
-        <span>LANGUAGES</span>
-      </div>
-
-      <h3>Programming</h3>
-
-      <div className="skill-items">
-        <span>Java</span>
-        <span>JavaScript</span>
-        <span>HTML</span>
-        <span>CSS</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <div className="skill-top">
-        <span>02</span>
-        <span>FRAMEWORKS</span>
-      </div>
-
-      <h3>Web Development</h3>
-
-      <div className="skill-items">
-        <span>React</span>
-        <span>Next.js</span>
-        <span>Tailwind CSS</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <div className="skill-top">
-        <span>03</span>
-        <span>TOOLS</span>
-      </div>
-
-      <h3>Development Tools</h3>
-
-      <div className="skill-items">
-        <span>VS Code</span>
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>Vercel</span>
-      </div>
-    </div>
-
-    <div className="skill-card">
-      <div className="skill-top">
-        <span>04</span>
-        <span>LEARNING</span>
-      </div>
-
-      <h3>Currently Learning</h3>
-
-      <div className="skill-items">
-        <span>APIs</span>
-        <span>Databases</span>
-        <span>System Design</span>
-        <span>Software Development</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-{/* Certification */}
-<section id="certification">
-
-  <div className="section-label">
-    03 / CREDENTIAL
-  </div>
-
-  <h2 className="section-title">
-    Certification
-  </h2>
-
-  <div className="certification-card">
-
-    <div className="certification-info">
-
-      <p className="certification-status">
-        TESDA CERTIFIED
-      </p>
-
-      <h3>
-        Computer Systems Servicing NC II
-      </h3>
-
-      <p className="certification-name">
-        TESDA — CSS NC II
-      </p>
-
-      <div className="certification-dates">
-        <div>
-          <span>ISSUED</span>
-          <strong>May 10, 2024</strong>
+      {/* =========================
+          EDUCATION
+      ========================= */}
+      <section id="education" className="section">
+        <div className="section-top">
+          <span>01 / EDUCATION</span>
+          <span>BACKGROUND</span>
         </div>
 
-        <div>
-          <span>VALID UNTIL</span>
-          <strong>May 09, 2029</strong>
+        <div className="section-heading-row">
+          <h2>Education</h2>
+          <span className="section-index">01</span>
         </div>
-      </div>
 
-    </div>
+        <div className="education-layout">
+          <div className="education-year">
+            <span>TERTIARY</span>
+            <strong>BSIT</strong>
+          </div>
 
-    <div className="certification-mark">
-      NC II
-    </div>
+          <div className="education-card">
+            <div className="card-number">EDU_01</div>
 
-  </div>
+            <p className="card-eyebrow">
+              NUEVA VIZCAYA STATE UNIVERSITY
+            </p>
 
-</section>
+            <h3>
+              Bachelor of Science
+              <br />
+              in Information Technology
+            </h3>
 
-{/* Projects */}
-<section id="projects">
+            <p className="card-description">
+              Studying programming, web development,
+              software engineering, databases, systems
+              integration, and other areas of information
+              technology.
+            </p>
 
-  <div className="section-label">
-    04 / PROJECTS
-  </div>
+            <div className="card-footer">
+              <span>NVSU — BAYOMBONG</span>
+              <span>BSIT</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <h2 className="section-title">
-    Things I've Built
-  </h2>
+      {/* =========================
+          SKILLS
+      ========================= */}
+      <section id="skills" className="section">
+        <div className="section-top">
+          <span>02 / SKILLS</span>
+          <span>TECH STACK</span>
+        </div>
 
-  <div className="projects-grid">
+        <div className="section-heading-row">
+          <h2>What I use</h2>
+          <span className="section-index">02</span>
+        </div>
 
-    {/* PROJECT 01 */}
-    <article className="project-card">
+        <div className="skills-list">
+          <div className="skill-row">
+            <span className="skill-number">01</span>
 
-      <div className="project-header">
-        <span className="project-number">01</span>
+            <div>
+              <h3>Programming</h3>
+              <p>
+                Java, JavaScript, HTML, and CSS.
+              </p>
+            </div>
 
-        <span className="project-type">
-          CURRENT PROJECT
-        </span>
-      </div>
+            <span className="skill-arrow">↗</span>
+          </div>
 
-      <h3>
-        Certificate of Appearance
-        Management System
-      </h3>
+          <div className="skill-row">
+            <span className="skill-number">02</span>
 
-      <p>
-        A web-based system currently being developed
-        to manage Certificate of Appearance requests,
-        approvals, attendance records, and document
-        release for a school setting.
-      </p>
+            <div>
+              <h3>Frontend</h3>
+              <p>
+                React, Next.js, responsive interfaces,
+                and modern web development.
+              </p>
+            </div>
 
-      <div className="project-tech">
-        <span>Next.js</span>
-        <span>React</span>
-        <span>TypeScript</span>
-      </div>
+            <span className="skill-arrow">↗</span>
+          </div>
 
-      <div className="project-links">
-        <a href="#" className="github-link">
-          GitHub ↗
-        </a>
+          <div className="skill-row">
+            <span className="skill-number">03</span>
 
-        <span className="project-status">
-          In Development
-        </span>
-      </div>
+            <div>
+              <h3>Development Tools</h3>
+              <p>
+                VS Code, Git, GitHub, and Vercel.
+              </p>
+            </div>
 
-    </article>
+            <span className="skill-arrow">↗</span>
+          </div>
 
+          <div className="skill-row">
+            <span className="skill-number">04</span>
 
-    {/* PROJECT 02 */}
-    <article className="project-card">
+            <div>
+              <h3>Currently Learning</h3>
+              <p>
+                APIs, databases, system design, and
+                software development practices.
+              </p>
+            </div>
 
-      <div className="project-header">
-        <span className="project-number">02</span>
+            <span className="skill-arrow">↗</span>
+          </div>
+        </div>
+      </section>
 
-        <span className="project-type">
-          MIT PROJECT
-        </span>
-      </div>
+      {/* =========================
+          CERTIFICATION
+      ========================= */}
+      <section id="certification" className="section">
+        <div className="section-top">
+          <span>03 / CREDENTIAL</span>
+          <span>CERTIFICATION</span>
+        </div>
 
-      <h3>
-        BMI Calculator
-      </h3>
+        <div className="section-heading-row">
+          <h2>Certification</h2>
+          <span className="section-index">03</span>
+        </div>
 
-      <p>
-        A simple application developed as part of
-        MIT coursework that calculates Body Mass Index
-        using a user's height and weight and displays
-        the resulting BMI.
-      </p>
+        <div className="certification">
+          <div className="cert-left">
+            <span className="cert-label">
+              TESDA CERTIFIED
+            </span>
 
-      <div className="project-tech">
-        <span>Programming</span>
-        <span>GUI</span>
-        <span>MIT</span>
-      </div>
+            <h3>
+              Computer Systems
+              <br />
+              Servicing NC II
+            </h3>
 
-      <div className="project-links">
-        <a href="#" className="github-link">
-          GitHub ↗
-        </a>
+            <p>
+              TESDA — CSS NC II
+            </p>
+          </div>
 
-        <a href="#" className="demo-link">
-          Details ↗
-        </a>
-      </div>
+          <div className="cert-middle">
+            <div>
+              <span>ISSUED</span>
+              <strong>May 10, 2024</strong>
+            </div>
 
-    </article>
+            <div>
+              <span>VALID UNTIL</span>
+              <strong>May 09, 2029</strong>
+            </div>
+          </div>
 
+          <div className="cert-badge">
+            <span>NC</span>
+            <strong>II</strong>
+          </div>
+        </div>
+      </section>
 
-    {/* PROJECT 03 */}
-    <article className="project-card">
+      {/* =========================
+          PROJECTS
+      ========================= */}
+      <section id="projects" className="section">
+        <div className="section-top">
+          <span>04 / PROJECTS</span>
+          <span>SELECTED WORK</span>
+        </div>
 
-      <div className="project-header">
-        <span className="project-number">03</span>
+        <div className="section-heading-row">
+          <h2>Things I&apos;ve built</h2>
+          <span className="section-index">04</span>
+        </div>
 
-        <span className="project-type">
-          MIT PROJECT
-        </span>
-      </div>
+        <div className="projects">
+          <article className="project">
+            <div className="project-top">
+              <span>01</span>
+              <span>IN DEVELOPMENT</span>
+            </div>
 
-      <h3>
-        Wage Calculator
-      </h3>
+            <div className="project-number">
+              01
+            </div>
 
-      <p>
-        A programming project developed as part of
-        MIT coursework that calculates an employee's
-        wage based on the provided work information
-        and input values.
-      </p>
+            <h3>
+              Certificate of Appearance
+              <br />
+              Management System
+            </h3>
 
-      <div className="project-tech">
-        <span>Programming</span>
-        <span>GUI</span>
-        <span>MIT</span>
-      </div>
+            <p>
+              A web-based system currently being developed
+              to manage Certificate of Appearance requests,
+              approvals, appearance records, and document
+              release for a school setting.
+            </p>
 
-      <div className="project-links">
-        <a href="#" className="github-link">
-          GitHub ↗
-        </a>
+            <div className="project-tags">
+              <span>Next.js</span>
+              <span>React</span>
+              <span>TypeScript</span>
+            </div>
 
-        <a href="#" className="demo-link">
-          Details ↗
-        </a>
-      </div>
+            <div className="project-bottom">
+              <span>2026</span>
+              <span className="project-link">CURRENT PROJECT ↗</span>
+            </div>
+          </article>
 
-    </article>
+          <article className="project">
+            <div className="project-top">
+              <span>02</span>
+              <span>COMPLETED</span>
+            </div>
 
-  </div>
+            <div className="project-number">
+              02
+            </div>
 
-</section>
+            <h3>
+              BMI
+              <br />
+              Calculator
+            </h3>
 
-{/* Contact */}
-<section id="contact">
+            <p>
+              A calculator application developed as part
+              of programming coursework. It calculates BMI
+              from user-provided height and weight.
+            </p>
 
-  <div className="section-label">
-    05 / CONTACT
-  </div>
+            <div className="project-tags">
+              <span>Programming</span>
+              <span>GUI</span>
+              <span>MIT</span>
+            </div>
 
-  <h2 className="section-title">
-    Let's Connect
-  </h2>
+            <div className="project-bottom">
+              <span>COURSEWORK</span>
+              <span className="project-link">COMPLETED ↗</span>
+            </div>
+          </article>
 
-  <div className="contact-content">
+          <article className="project">
+            <div className="project-top">
+              <span>03</span>
+              <span>COMPLETED</span>
+            </div>
 
-    <p className="contact-text">
-      Interested in working together, discussing a project,
-      or simply connecting? Feel free to reach out.
-    </p>
+            <div className="project-number">
+              03
+            </div>
 
-    <a
-      href="mailto:catabonakaye@gmail.com"
-      className="contact-email"
-    >
-      catabonakaye@gmail.com ↗
-    </a>
+            <h3>
+              Wage
+              <br />
+              Calculator
+            </h3>
 
-  </div>
+            <p>
+              A programming project created as part of
+              coursework that calculates wages from
+              provided work and pay information.
+            </p>
 
-</section>
+            <div className="project-tags">
+              <span>Programming</span>
+              <span>GUI</span>
+              <span>MIT</span>
+            </div>
 
-      {/* Footer */}
-      <footer>
-        <p>© 2026 Kaye M. Catabona</p>
-        <p>Student Programmer</p>
+            <div className="project-bottom">
+              <span>COURSEWORK</span>
+              <span className="project-link">COMPLETED ↗</span>
+            </div>
+          </article>
+        </div>
+
+        <div className="projects-note">
+          <span>MORE PROJECTS COMING</span>
+          <span>AS I KEEP BUILDING →</span>
+        </div>
+      </section>
+
+      {/* =========================
+          CONTACT
+      ========================= */}
+      <section id="contact" className="contact section">
+        <div className="section-top">
+          <span>05 / CONTACT</span>
+          <span>GET IN TOUCH</span>
+        </div>
+
+        <div className="contact-heading">
+          <p>HAVE A PROJECT IN MIND?</p>
+
+          <h2>
+            Let&apos;s make
+            <br />
+            something.
+          </h2>
+        </div>
+
+        <div className="contact-bottom">
+          <div>
+            <p>
+              I&apos;m always open to learning, collaborating,
+              and connecting with people interested in
+              technology and software development.
+            </p>
+          </div>
+
+          <div className="contact-links">
+            <a
+              href="mailto:catabonakaye@gmail.com"
+              className="contact-item"
+            >
+              <span>EMAIL</span>
+              <strong>catabonakaye@gmail.com ↗</strong>
+            </a>
+
+            <a
+              href="https://github.com/ctbnkaye"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-item"
+            >
+              <span>GITHUB</span>
+              <strong>github.com/ctbnkaye ↗</strong>
+            </a>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-item"
+            >
+              <span>RESUME</span>
+              <strong>View my resume ↗</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+          FOOTER
+      ========================= */}
+      <footer className="footer">
+        <span>KAYE.DEV</span>
+        <span>BSIT STUDENT / PROGRAMMER</span>
+        <span>© 2026</span>
       </footer>
     </main>
   );
