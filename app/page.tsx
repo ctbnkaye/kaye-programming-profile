@@ -89,12 +89,12 @@ export default function Home() {
       <div className="page-orb" />
 
       {/* =========================
-          HERO
+          HOME
       ========================= */}
       <section id="home" className="hero">
         <div className="hero-inner">
           <div className="hero-meta">
-            <span>01 — STUDENT DEVELOPER</span>
+            <span>00 — STUDENT DEVELOPER</span>
             <span>PHILIPPINES</span>
           </div>
 
@@ -111,14 +111,15 @@ export default function Home() {
             <div className="hero-bottom">
               <div>
                 <p className="role">
-                  BSIT STUDENT / PROGRAMMER
+                  BSIT STUDENT · ASPIRING SOFTWARE ENGINEER
                 </p>
 
                 <p className="hero-description">
-                  I&apos;m an Information Technology student
-                  learning to design and build useful digital
-                  experiences through programming, web
-                  development, and software projects.
+                  I&apos;m an Information Technology student interested
+                  in software development and building practical digital
+                  solutions. I enjoy turning ideas into working
+                  applications while continuously improving my
+                  programming and development skills.
                 </p>
 
                 <div className="hero-actions">
@@ -183,10 +184,10 @@ export default function Home() {
             </h3>
 
             <p className="card-description">
-              Studying programming, web development,
-              software engineering, databases, systems
-              integration, and other areas of information
-              technology.
+              Currently studying Information Technology with
+              coursework covering programming, web development,
+              databases, systems integration, software engineering,
+              and other areas of computing.
             </p>
 
             <div className="card-footer">
@@ -218,7 +219,8 @@ export default function Home() {
             <div>
               <h3>Programming</h3>
               <p>
-                Java, JavaScript, HTML, and CSS.
+                Java, JavaScript, HTML, CSS, and
+                object-oriented programming fundamentals.
               </p>
             </div>
 
@@ -229,10 +231,11 @@ export default function Home() {
             <span className="skill-number">02</span>
 
             <div>
-              <h3>Frontend</h3>
+              <h3>Frontend Development</h3>
               <p>
                 React, Next.js, responsive interfaces,
-                and modern web development.
+                component-based development, and modern
+                web technologies.
               </p>
             </div>
 
@@ -245,7 +248,8 @@ export default function Home() {
             <div>
               <h3>Development Tools</h3>
               <p>
-                VS Code, Git, GitHub, and Vercel.
+                Visual Studio Code, Git, GitHub, Vercel,
+                and browser-based development tools.
               </p>
             </div>
 
@@ -258,8 +262,9 @@ export default function Home() {
             <div>
               <h3>Currently Learning</h3>
               <p>
-                APIs, databases, system design, and
-                software development practices.
+                APIs, databases, system design, software
+                architecture, and professional development
+                practices.
               </p>
             </div>
 
@@ -333,15 +338,15 @@ export default function Home() {
         </div>
 
         <div className="projects">
+
+          {/* PROJECT 01 */}
           <article className="project">
             <div className="project-top">
               <span>01</span>
               <span>IN DEVELOPMENT</span>
             </div>
 
-            <div className="project-number">
-              01
-            </div>
+            <div className="project-number">01</div>
 
             <h3>
               Certificate of Appearance
@@ -350,10 +355,11 @@ export default function Home() {
             </h3>
 
             <p>
-              A web-based system currently being developed
-              to manage Certificate of Appearance requests,
+              A web-based school management system currently
+              under development. The system is designed to
+              organize Certificate of Appearance requests,
               approvals, appearance records, and document
-              release for a school setting.
+              release in one workflow.
             </p>
 
             <div className="project-tags">
@@ -363,20 +369,21 @@ export default function Home() {
             </div>
 
             <div className="project-bottom">
-              <span>2026</span>
-              <span className="project-link">CURRENT PROJECT ↗</span>
+              <span>MY ROLE · DEVELOPER</span>
+              <span className="project-link">
+                2026 ↗
+              </span>
             </div>
           </article>
 
+          {/* PROJECT 02 */}
           <article className="project">
             <div className="project-top">
               <span>02</span>
               <span>COMPLETED</span>
             </div>
 
-            <div className="project-number">
-              02
-            </div>
+            <div className="project-number">02</div>
 
             <h3>
               BMI
@@ -385,9 +392,10 @@ export default function Home() {
             </h3>
 
             <p>
-              A calculator application developed as part
-              of programming coursework. It calculates BMI
-              from user-provided height and weight.
+              A BMI calculator created as part of programming
+              coursework. The application accepts height and
+              weight values and calculates the user&apos;s Body
+              Mass Index using the standard BMI formula.
             </p>
 
             <div className="project-tags">
@@ -397,20 +405,21 @@ export default function Home() {
             </div>
 
             <div className="project-bottom">
-              <span>COURSEWORK</span>
-              <span className="project-link">COMPLETED ↗</span>
+              <span>MY ROLE · DEVELOPER</span>
+              <span className="project-link">
+                COURSEWORK ↗
+              </span>
             </div>
           </article>
 
+          {/* PROJECT 03 */}
           <article className="project">
             <div className="project-top">
               <span>03</span>
               <span>COMPLETED</span>
             </div>
 
-            <div className="project-number">
-              03
-            </div>
+            <div className="project-number">03</div>
 
             <h3>
               Wage
@@ -419,9 +428,10 @@ export default function Home() {
             </h3>
 
             <p>
-              A programming project created as part of
-              coursework that calculates wages from
-              provided work and pay information.
+              A programming coursework project that calculates
+              wages based on provided work and pay information.
+              Built to practice input handling, calculations,
+              and application logic.
             </p>
 
             <div className="project-tags">
@@ -431,8 +441,10 @@ export default function Home() {
             </div>
 
             <div className="project-bottom">
-              <span>COURSEWORK</span>
-              <span className="project-link">COMPLETED ↗</span>
+              <span>MY ROLE · DEVELOPER</span>
+              <span className="project-link">
+                COURSEWORK ↗
+              </span>
             </div>
           </article>
         </div>
@@ -465,19 +477,23 @@ export default function Home() {
         <div className="contact-bottom">
           <div>
             <p>
-              I&apos;m always open to learning, collaborating,
-              and connecting with people interested in
-              technology and software development.
+              I&apos;m open to learning, collaborating, and
+              connecting with people interested in technology,
+              software development, and building useful
+              digital solutions.
             </p>
           </div>
 
           <div className="contact-links">
+
             <a
               href="mailto:catabonakaye@gmail.com"
               className="contact-item"
             >
               <span>EMAIL</span>
-              <strong>catabonakaye@gmail.com ↗</strong>
+              <strong>
+                catabonakaye@gmail.com ↗
+              </strong>
             </a>
 
             <a
@@ -487,7 +503,9 @@ export default function Home() {
               className="contact-item"
             >
               <span>GITHUB</span>
-              <strong>github.com/ctbnkaye ↗</strong>
+              <strong>
+                github.com/ctbnkaye ↗
+              </strong>
             </a>
 
             <a
@@ -497,8 +515,11 @@ export default function Home() {
               className="contact-item"
             >
               <span>RESUME</span>
-              <strong>View my resume ↗</strong>
+              <strong>
+                View my resume ↗
+              </strong>
             </a>
+
           </div>
         </div>
       </section>
@@ -508,7 +529,7 @@ export default function Home() {
       ========================= */}
       <footer className="footer">
         <span>KAYE.DEV</span>
-        <span>BSIT STUDENT / PROGRAMMER</span>
+        <span>BSIT STUDENT · ASPIRING SOFTWARE ENGINEER</span>
         <span>© 2026</span>
       </footer>
     </main>
